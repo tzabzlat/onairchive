@@ -221,7 +221,7 @@
                     <div class="tab-pane active" id="windows-gui">
                         <div class="launch-step">
                             <div class="step-number">1</div>
-                            <h4>Скачай zip-архив сборки для Windows</h4>
+                            <h4>Скачай <a href="https://github.com/tzabzlat/onairchive/releases" target="_blank" style="color: var(--secondary-color);">zip-архив</a> сборки</h4>
                         </div>
                         <div class="launch-step">
                             <div class="step-number">2</div>
@@ -245,24 +245,28 @@
                     <div class="tab-pane" id="windows-service">
                         <div class="launch-step">
                             <div class="step-number">1</div>
+                            <h4>Скачай <a href="https://github.com/tzabzlat/onairchive/releases" target="_blank" style="color: var(--secondary-color);">zip-архив</a> сборки</h4>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
                             <h4>Установка и запуск службы</h4>
                             <p class="launch-note">Запусти консоль от имени администратора:</p>
                             <div class="code-block">
 <pre><code><span class="code-comment">; Установка службы</span>
-OnAirchive.exe /install
+OnAirchiveSVC.exe /install
 
 <span class="code-comment">; Запуск службы</span>
 net start OnAirchiveSVCService</code></pre>
                             </div>
                         </div>
                         <div class="launch-step">
-                            <div class="step-number">2</div>
+                            <div class="step-number">3</div>
                             <h4>Управление через GUI</h4>
                             <p class="launch-note">Открой диспетчер служб Windows:</p>
                             <ol class="launch-steps-list">
                                 <li>Нажми <kbd>Win + R</kbd></li>
                                 <li>Введи <code>services.msc</code> и нажми Enter</li>
-                                <li>Найди <strong>OnAirchive</strong> в списке служб</li>
+                                <li>Найди <strong>OnAirchiveSVCService</strong> в списке служб</li>
                                 <li>Управляй службой через контекстное меню (Пуск/Стоп/Перезапуск)</li>
                             </ol>
                         </div>
@@ -272,6 +276,10 @@ net start OnAirchiveSVCService</code></pre>
                     <div class="tab-pane" id="linux">
                         <div class="launch-step">
                             <div class="step-number">1</div>
+                            <h4>Скачай <a href="https://github.com/tzabzlat/onairchive/releases" target="_blank" style="color: var(--secondary-color);">zip-архив</a> сборки</h4>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
                             <h4>Установи пакет ffmpeg</h4>
                             <div class="code-block">
 <pre><code>apt-get install ffmpeg</code></pre>
@@ -279,7 +287,7 @@ net start OnAirchiveSVCService</code></pre>
                             <p class="launch-note">Для установки потребуются права суперпользователя (sudo)</p>
                         </div>
                         <div class="launch-step">
-                            <div class="step-number">2</div>
+                            <div class="step-number">3</div>
                             <h4>Запуск через скрипт</h4>
                             <div class="code-block">
 <pre><code>./run.sh</code></pre>

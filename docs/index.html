@@ -221,7 +221,7 @@
                     <div class="tab-pane active" id="windows-gui">
                         <div class="launch-step">
                             <div class="step-number">1</div>
-                            <h4>Download the Windows build zip archive</h4>
+                            <h4>Download the build <a href="https://github.com/tzabzlat/onairchive/releases" target="_blank" style="color: var(--secondary-color);">zip archive</a></h4>
                         </div>
                         <div class="launch-step">
                             <div class="step-number">2</div>
@@ -245,24 +245,28 @@
                     <div class="tab-pane" id="windows-service">
                         <div class="launch-step">
                             <div class="step-number">1</div>
+                            <h4>Download the build <a href="https://github.com/tzabzlat/onairchive/releases" target="_blank" style="color: var(--secondary-color);">zip archive</a></h4>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
                             <h4>Install and start the service</h4>
                             <p class="launch-note">Run console as administrator:</p>
                             <div class="code-block">
 <pre><code><span class="code-comment">; Install service</span>
-OnAirchive.exe /install
+OnAirchiveSVC.exe /install
 
 <span class="code-comment">; Start service</span>
 net start OnAirchiveSVCService</code></pre>
                             </div>
                         </div>
                         <div class="launch-step">
-                            <div class="step-number">2</div>
+                            <div class="step-number">3</div>
                             <h4>Manage via GUI</h4>
                             <p class="launch-note">Open Windows Services Manager:</p>
                             <ol class="launch-steps-list">
                                 <li>Press <kbd>Win + R</kbd></li>
                                 <li>Type <code>services.msc</code> and press Enter</li>
-                                <li>Find <strong>OnAirchive</strong> in the services list</li>
+                                <li>Find <strong>OnAirchiveSVCService</strong> in the services list</li>
                                 <li>Manage the service via context menu (Start/Stop/Restart)</li>
                             </ol>
                         </div>
@@ -272,6 +276,10 @@ net start OnAirchiveSVCService</code></pre>
                     <div class="tab-pane" id="linux">
                         <div class="launch-step">
                             <div class="step-number">1</div>
+                            <h4>Download the build <a href="https://github.com/tzabzlat/onairchive/releases" target="_blank" style="color: var(--secondary-color);">zip archive</a></h4>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
                             <h4>Install ffmpeg package</h4>
                             <div class="code-block">
 <pre><code>apt-get install ffmpeg</code></pre>
@@ -279,7 +287,7 @@ net start OnAirchiveSVCService</code></pre>
                             <p class="launch-note">Superuser privileges (sudo) required for installation</p>
                         </div>
                         <div class="launch-step">
-                            <div class="step-number">2</div>
+                            <div class="step-number">3</div>
                             <h4>Launch via script</h4>
                             <div class="code-block">
 <pre><code>./run.sh</code></pre>
