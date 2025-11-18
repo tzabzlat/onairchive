@@ -1,0 +1,15 @@
+__history/
+__recovery/
+*.~*
+*.ddp
+*.dcu
+*.local
+Output/
+Temp/
+desktop.ini
+Thumbs.db
+*.identcache
+*.stat
+.idea
+Platforms/Windows/GUI/OnAirchiveVCL.res
+Platforms/Windows/SVC/OnAirchiveSVC.res

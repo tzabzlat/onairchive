@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F8F6D12C-8802-4B29-9B93-8DE9FEF7B828}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Platforms\Windows\GUI\OnAirchiveVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Platforms\Windows\SVC\OnAirchiveSVC.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OnAirchiveVCL">
+        <MSBuild Projects="Platforms\Windows\GUI\OnAirchiveVCL.dproj"/>
+    </Target>
+    <Target Name="OnAirchiveVCL:Clean">
+        <MSBuild Projects="Platforms\Windows\GUI\OnAirchiveVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OnAirchiveVCL:Make">
+        <MSBuild Projects="Platforms\Windows\GUI\OnAirchiveVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OnAirchiveSVC">
+        <MSBuild Projects="Platforms\Windows\SVC\OnAirchiveSVC.dproj"/>
+    </Target>
+    <Target Name="OnAirchiveSVC:Clean">
+        <MSBuild Projects="Platforms\Windows\SVC\OnAirchiveSVC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OnAirchiveSVC:Make">
+        <MSBuild Projects="Platforms\Windows\SVC\OnAirchiveSVC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OnAirchiveVCL;OnAirchiveSVC"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OnAirchiveVCL:Clean;OnAirchiveSVC:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OnAirchiveVCL:Make;OnAirchiveSVC:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

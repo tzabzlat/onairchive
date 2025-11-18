@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="On Airchive - Free open-source Windows application for recording and archiving radio stations. Made by radio lovers for radio lovers!">
+    <title>On Airchive - Record Your Favorite Radio Stations</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">On Airchive</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">Getting Started</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#community">GitHub</a></li>
+            </ul>
+            <div class="language-selector">
+                <a href="index_ru.html" title="Русский">RU</a>
+                <span style="color: var(--text-tertiary);">|</span>
+                <a href="#" class="active" title="English">EN</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="badge">100% Free & Open Source</div>
+                <h1 class="hero-title">On Airchive</h1>
+                <p class="hero-subtitle">Archive your favorite radio stations. Automatically. Free. 24/7.</p>
+                <p class="hero-description">
+                    Background daemon for recording internet radio streams. Runs in the background, saves hourly audio files, and preserves program titles.
+                </p>
+                <div class="hero-cta">
+                    <div class="download-block">
+                        <a href="#download" class="btn btn-primary btn-download">
+                            <i class="fas fa-download"></i>
+                            Download Free
+                        </a>
+                        <div class="platform-badges">
+                            <span class="platform-badge"><i class="fas fa-check"></i> Windows GUI</span>
+                            <span class="platform-badge"><i class="fas fa-check"></i> Windows Service</span>
+                            <span class="platform-badge"><i class="fas fa-check"></i> Linux CLI</span>
+                        </div>
+                    </div>
+                    <div class="secondary-buttons">
+                        <a href="https://github.com/yourusername/recording-station" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="#how-it-works" class="btn btn-ghost">
+                            <i class="fas fa-book"></i>
+                            Getting Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="radio-illustration">
+                    <div class="radio-waves"></div>
+                    <div class="radio-waves"></div>
+                    <div class="radio-waves"></div>
+                    <i class="fas fas fa-tower-cell radio-icon"></i>
+                    <div class="recording-badge">
+                        <i class="fas fa-circle"></i>
+                        <span>REC</span>
+                    </div>
+                    <div class="always-on-label">24/7</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Everything you need for background radio archiving</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rotate"></i>
+                    </div>
+                    <h3 class="feature-title">Auto-recovery</h3>
+                    <p class="feature-description">Automatic reconnection when connection drops</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-duotone fa-solid fa-bars-staggered"></i>
+                    </div>
+                    <h3 class="feature-title">Parallel Recording</h3>
+                    <p class="feature-description">Record multiple radio stations simultaneously</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-volume-xmark"></i>
+                    </div>
+                    <h3 class="feature-title">Silence Detection</h3>
+                    <p class="feature-description">Reconnects when silence is detected in the stream</p>
+                </div>
+            </div>
+            <ul class="features-list">
+                <li>Install as Windows service for auto-start without user login</li>
+                <li>Customizable RAM buffering for minimal disk load</li>
+                <li>AAC encoding via ffmpeg</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Config Example Section -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Configuration</h2>
+                <p class="section-subtitle">Add your favorite radio station URLs to the config.ini file:</p>
+            </div>
+            <div class="code-section">
+                <div class="code-header">
+                    📄 config.ini
+                </div>
+                <div class="code-block">
+<pre><code><span class="code-comment">; General settings</span>
+<span class="code-section-name">[General]</span>
+<span class="code-comment">; RAM buffer size to reduce disk access frequency</span>
+<span class="code-key">DataBufferSizeKb</span>=<span class="code-value">5120</span>
+
+<span class="code-comment">; Root directory for recordings</span>
+<span class="code-section-name">[Storage]</span>
+<span class="code-key">FilesPath</span>=<span class="code-value">D:\MyRadioArchive</span>
+
+<span class="code-comment">; Radio station stream settings</span>
+<span class="code-section-name">[Stream]</span>
+<span class="code-comment">; Radio station stream URL in mp3 or aac format</span>
+<span class="code-key">StreamUri0</span>=<span class="code-value">https://am.radioaurora.am/al.mp3</span>
+<span class="code-comment">; Subfolder with this name will be created in FilesPath directory</span>
+<span class="code-key">StreamToken0</span>=<span class="code-value">Aurora</span>
+<span class="code-comment">; Radio station timezone for correct timestamps</span>
+<span class="code-key">StreamTz0</span>=<span class="code-value">Asia/Yerevan</span>
+
+<span class="code-comment">; Add more streams: StreamUri1, StreamToken1, StreamTz1, etc.</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Launch Instructions Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Launch</h2>
+            </div>
+
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="windows-gui">
+                        <i class="fab fa-windows"></i> Windows GUI
+                    </button>
+                    <button class="tab-btn" data-tab="windows-service">
+                        <i class="fas fa-cog"></i> Windows Service
+                    </button>
+                    <button class="tab-btn" data-tab="linux">
+                        <i class="fab fa-linux"></i> Linux
+                    </button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Windows GUI Tab -->
+                    <div class="tab-pane active" id="windows-gui">
+                        <div class="launch-step">
+                            <div class="step-number">1</div>
+                            <h4>Download the Windows build zip archive</h4>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
+                            <h4>Edit <code>config.ini</code></h4>
+                            <p class="launch-note">Specify the URLs of streams you want to save</p>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">3</div>
+                            <h4>Launch the application</h4>
+                            <div class="code-block">
+<pre><code>OnAirchiveVCL.exe</code></pre>
+                            </div>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">4</div>
+                            <h4>Monitor the recording in the application window</h4>
+                        </div>
+                    </div>
+
+                    <!-- Windows Service Tab -->
+                    <div class="tab-pane" id="windows-service">
+                        <div class="launch-step">
+                            <div class="step-number">1</div>
+                            <h4>Install and start the service</h4>
+                            <p class="launch-note">Run console as administrator:</p>
+                            <div class="code-block">
+<pre><code><span class="code-comment">; Install service</span>
+OnAirchive.exe /install
+
+<span class="code-comment">; Start service</span>
+net start OnAirchiveSVCService</code></pre>
+                            </div>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
+                            <h4>Manage via GUI</h4>
+                            <p class="launch-note">Open Windows Services Manager:</p>
+                            <ol class="launch-steps-list">
+                                <li>Press <kbd>Win + R</kbd></li>
+                                <li>Type <code>services.msc</code> and press Enter</li>
+                                <li>Find <strong>OnAirchive</strong> in the services list</li>
+                                <li>Manage the service via context menu (Start/Stop/Restart)</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Linux Tab -->
+                    <div class="tab-pane" id="linux">
+                        <div class="launch-step">
+                            <div class="step-number">1</div>
+                            <h4>Install ffmpeg package</h4>
+                            <div class="code-block">
+<pre><code>apt-get install ffmpeg</code></pre>
+                            </div>
+                            <p class="launch-note">Superuser privileges (sudo) required for installation</p>
+                        </div>
+                        <div class="launch-step">
+                            <div class="step-number">2</div>
+                            <h4>Launch via script</h4>
+                            <div class="code-block">
+<pre><code>./run.sh</code></pre>
+                            </div>
+                            <p class="launch-note">Make sure the script has execute permissions: <code>chmod +x run.sh</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Result 📁</h2>
+                <p class="section-subtitle">The program automatically organizes recordings by hour:</p>
+            </div>
+
+            <div class="result-section">
+                <div class="result-example">
+                    <div class="file-tree-header">
+                        <i class="fas fa-folder-open"></i> File structure example
+                    </div>
+                    <div class="file-tree">
+                        <div class="tree-root">
+                            <i class="fas fa-hdd"></i> root/ <span class="tree-hint">(FilesPath)</span>
+                        </div>
+                        <div class="tree-folder tree-nested">
+                            <i class="fas fa-folder"></i> Aurora/
+                        </div>
+                        <div class="tree-folder tree-nested-2">
+                            <i class="fas fa-folder"></i> 2020-11-23/
+                        </div>
+                        <div class="tree-file tree-nested-3">
+                            <i class="fas fa-file-audio"></i> [2020-11-23 00-00-00] Aurora.aac
+                        </div>
+                        <div class="tree-file tree-nested-3">
+                            <i class="fas fa-file-alt"></i> [2020-11-23 00-00-00] Aurora.txt
+                        </div>
+                        <div class="tree-file tree-nested-3">
+                            <i class="fas fa-file-audio"></i> [2020-11-23 01-00-00] Aurora.aac
+                        </div>
+                        <div class="tree-file tree-nested-3">
+                            <i class="fas fa-file-alt"></i> [2020-11-23 01-00-00] Aurora.txt
+                        </div>
+                        <div class="tree-file tree-nested-3">
+                            <i class="fas fa-file-audio"></i> [2020-11-23 02-00-00] Aurora.aac
+                        </div>
+                        <div class="tree-file tree-nested-3">
+                            <i class="fas fa-file-alt"></i> [2020-11-23 02-00-00] Aurora.txt
+                        </div>
+                        <div class="tree-more tree-nested-3">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-explanation">
+                    <div class="explanation-item">
+                        <div class="file-icon">
+                            <i class="fas fa-file-audio"></i>
+                        </div>
+                        <div class="explanation-content">
+                            <div class="file-pattern-wrapper">
+                                <code class="file-pattern">*.aac</code>
+                            </div>
+                            <p>Audio file for one hour (in StreamTz timezone)</p>
+                        </div>
+                    </div>
+                    <div class="explanation-item">
+                        <div class="file-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="explanation-content">
+                            <div class="file-pattern-wrapper">
+                                <code class="file-pattern">*.txt</code>
+                            </div>
+                            <p>List of shows/tracks for current hour (if station broadcasts tags)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Battle-Tested</h2>
+                <p class="section-subtitle">Reliability proven by real-world usage</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">
+                        18,000<span class="stat-number-plus">+</span>
+                    </div>
+                    <div class="stat-label">
+                        Hours Recorded
+                    </div>
+                    <div class="stat-description">
+                        Running as background Windows service
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">FAQ</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What operating systems are supported?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>On Airchive supports Windows 7, 8, 10, 11 and Ubuntu 22+ on x86 and x64 architectures. For Windows, all necessary dependencies (BASS Audio Library, ffmpeg) are included in the distribution. For Ubuntu, ffmpeg must be installed with the command apt-get install ffmpeg.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Which radio stations can I record?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Any internet radio station that broadcasts via HTTP/HTTPS streams. Just specify the stream URL in the configuration file. On Airchive supports all popular streaming formats.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What format are recordings saved in?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Recordings are saved in AAC (ADTS) format with 128 kbps bitrate (configurable). This provides excellent sound quality with reasonable file sizes. Professional qaac encoder is used.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What happens if my internet connection drops?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No worries! On Airchive will automatically reconnect to the stream and continue recording.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I contribute to the project?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Star the project on GitHub, report bugs, suggest improvements, contribute code, or simply tell your friends about it. Every contribution matters!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Join Development! 🧑‍💻</h2>
+                <p class="section-subtitle">On Airchive is an open-source project. Your contribution matters!</p>
+            </div>
+            <div class="github-card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </h3>
+                <p style="margin: 2rem 0; opacity: 0.9;">
+                    <strong>Language:</strong> Delphi/Pascal<br>
+                    <strong>License:</strong> MIT License
+                </p>
+                <a href="https://github.com/yourusername/recording-station" class="btn btn-primary" style="background: white; color: var(--primary-color);" target="_blank">
+                    <i class="fab fa-github"></i>
+                    Open on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 On Airchive. Open Source Project | Made with ❤️ for radio lovers</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">MIT License</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for FAQ Accordion, Mobile Menu, and Tabs -->
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#download') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const languageSelector = document.querySelector('.language-selector');
+        const overlay = document.querySelector('.mobile-menu-overlay');
+
+        function toggleMobileMenu() {
+            navLinks.classList.toggle('active');
+            languageSelector.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Toggle hamburger icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when clicking on overlay
+        overlay?.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Tabs functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and panes
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding pane
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
